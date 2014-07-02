@@ -5,17 +5,16 @@ refreshFrequency: 60000
 # Use a '+' for a completed item
 todolistfile = '~/ToDo.list'
 
-command: "cat #{todolistfile} | awk 'BEGIN {print \"<ol>\"} /^[-]/ {print \"<li>\"substr($0,2)\"</li>\"} /^[+]/ {print \"<li class=\\\"completed\\\">\"substr($0,2)\"</li>\"} END {print \"</ol>\"}'"
+command: "cat #{todolistfile} | awk 'BEGIN {print \"<ol>\"} /^[-]/ {print \"<li>\"substr($0,2)\"</li>\"} /^[+]/ {print \"<li class=\\\"completed\\\">\"substr($0,2)\"</li>\"} /^[!]/ {print \"<li class=\\\"critical\\\">\"substr($0,2)\"</li>\"} END {print \"</ol>\"}'"
 
 style: """
-  top: 10px
+  top: 220px
   left: 10px
   color: #fff
   font-family: Helvetica Neue
 
   h
     display: block
-    text-align: center
     font-size: 24px
     font-weight: 100
 
@@ -31,6 +30,10 @@ style: """
     color: #888
     font-weight: regular
     text-decoration:line-through
+
+  .critical
+    color: #e74c3c
+    font-weight: bold
 """
 
 
