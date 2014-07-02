@@ -2,6 +2,7 @@ refreshFrequency: 60000
 
 # ToDoList Entries:
 # Use a '-' for an open item
+# Use a '!' for an important open item
 # Use a '+' for a completed item
 todolistfile = '~/ToDo.list'
 
